@@ -1,0 +1,175 @@
+<!DOCTYPE html>
+<html lang="en" dir="ltr">
+    <head>
+        <meta charset="UTF-8">
+        <title> Responsive Sidebar Menu </title>
+        <link rel="stylesheet" href="./styles/sidebar.css">
+        <!-- Boxicons CDN Link -->
+        <link href='https://unpkg.com/boxicons@2.0.9/css/boxicons.min.css' rel='stylesheet'>
+        <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    </head>
+    <body>
+        <div class="sidebar">
+            <div class="logo-details">
+                <i class='bx bx-repost'></i>
+                <span class="logo_name">ePOS</span>
+            </div>
+            <ul class="nav-links">
+                <li>
+                    <a href="#">
+                        <i class="bx bx-grid-alt"></i>
+                        <span class="link_name">Dashboard</span>
+                    </a>
+                    <ul class="sub-menu blank">
+                        <li><a class="link_name" href="#">Dashboard</a></li>
+                    </ul>                      
+                </li>
+                <li>
+                    <div class="icon-link">
+                        <a href="#">
+                            <i class="bx bx-collection"></i>
+                            <span class="link_name">Gategory</span>
+                        </a>
+                        <i class="bx bxs-chevron-down arrow"></i>
+                    </div>
+                    <ul class="sub-menu">
+                        <li><a class="link_name" href="#">Category</a></li>
+                        <li>
+                            <div class="icon-link">
+                                <a href="#">HTML & CSS</a>
+                                <i class="bx bxs-chevron-down arrow-level2"></i>
+                            </div>
+                            <ul class="sub-menu-level2">
+                                <li><a href="#">HTML4</a></li>
+                                <li><a href="#">HTML5</a></li>
+                            </ul>
+                        </li>
+                        <li><a href="#">JavaScript</a></li>
+                        <li><a href="#">PHP & MySQL</a></li>
+                    </ul>
+                </li>
+                <li>
+                    <div class="icon-link">
+                        <a href="#">
+                            <i class="bx bx-book-alt"></i>
+                            <span class="link_name">Posts</span>
+                        </a>
+                        <i class="bx bxs-chevron-down arrow"></i>
+                    </div>
+                    <ul class="sub-menu">
+                        <li><a class="link_name" href="#">Posts</a></li>
+                        <li><a href="#">Web Design</a></li>
+                        <li><a href="#">Login Form</a></li>
+                        <li><a href="#">Card Design</a></li>
+                    </ul>                    
+                </li> 
+                <li>
+                    <a href="#">
+                        <i class="bx bx-pie-chart-alt-2"></i>
+                        <span class="link_name">Analytics</span>
+                    </a>
+                    <ul class="sub-menu blank">
+                        <li><a class="link_name" href="#">Analytics</a></li>
+                    </ul>                      
+                </li>
+                <li>
+                    <a href="#">
+                        <i class="bx bx-line-chart"></i>
+                        <span class="link_name">Chart</span>
+                    </a>
+                    <ul class="sub-menu blank">
+                        <li><a class="link_name" href="#">Chart</a></li>
+                    </ul>                      
+                </li>                
+                <li>
+                    <div class="icon-link">
+                        <a href="#">
+                            <i class="bx bx-plug"></i>
+                            <span class="link_name">Plugins</span>
+                        </a>
+                        <i class="bx bxs-chevron-down arrow"></i>
+                    </div>
+                    <ul class="sub-menu">
+                        <li><a class="link_name" href="#">Plugins</a></li>
+                        <li><a href="#">UI Face</a></li>
+                        <li><a href="#">Pigments</a></li>
+                        <li><a href="#">Box Icons</a></li>
+                    </ul>                    
+                </li> 
+                <li>
+                    <a href="#">
+                        <i class="bx bx-compass"></i>
+                        <span class="link_name">Explore</span>
+                    </a>
+                    <ul class="sub-menu blank">
+                        <li><a class="link_name" href="#">Explore</a></li>
+                    </ul>                      
+                </li>                
+                <li>
+                    <a href="#">
+                        <i class="bx bx-history"></i>
+                        <span class="link_name">History</span>
+                    </a>
+                    <ul class="sub-menu blank">
+                        <li><a class="link_name" href="#">History</a></li>
+                    </ul>                      
+                </li>                
+                <li>
+                    <a href="#">
+                        <i class="bx bx-cog"></i>
+                        <span class="link_name">Settings</span>
+                    </a>
+                    <ul class="sub-menu blank">
+                        <li><a class="link_name" href="#">Settings</a></li>
+                    </ul>                      
+                </li> 
+                <li>
+                    <div class="profile-details">
+                        <div class="profile-content">
+                            <span class='bx bx-user-circle' id="profile-image" alt="Profile"></i>
+                        </div>
+                        <div class="name-job">
+                            <div class="profile_name">
+                                Joseph Jabbour
+                            </div>
+                            <div class="job">
+                                Web Developer
+                            </div> 
+                        </div>
+                        <i class="bx bx-log-out" ></i>
+                    </div>
+                </li>               
+            </ul>
+        </div>
+        <section class="home-section">
+            <div class="home-content">
+                <i class="bx bx-menu" ></i>
+                <span class="text">Drop Down Sidebar</span>
+            </div>
+        </section>
+        <script>
+            function addEventsToArrowIcon() {
+                let arrow = document.querySelectorAll(".arrow");
+                arrow.forEach(element => {
+                    element.addEventListener("click", (e) => {
+                        let arrowParent = e.target.parentElement.parentElement;
+                        arrowParent.classList.toggle("showMenu");
+                    });
+                });
+                let arrowLevel2 = document.querySelectorAll(".arrow-level2");
+                arrowLevel2.forEach(element => {
+                    element.addEventListener("click", (e) => {
+                        let arrowParentLevel2 = e.target.parentElement.parentElement;
+                        arrowParentLevel2.classList.toggle("showMenu");
+                    });
+                });
+            }
+            addEventsToArrowIcon();
+            let sidebar = document.querySelector(".sidebar");
+            let sidebarBtn = document.querySelector(".bx-menu");
+            sidebarBtn.addEventListener("click", () => {
+                sidebar.classList.toggle("close");
+            });
+        </script>
+    </body>
+</html>
